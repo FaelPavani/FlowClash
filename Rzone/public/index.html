@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RapZone | Home</title>
+
+    <script src="./js/sessao.js"></script>
+
+   
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/style.css ">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body onload="autenticar()">
+  <header>
+    <a class="logo"><img src="assets/logodefinitiva.png" alt=""></a>
+    <ul>
+        <li><a class="nav" href="./index.html">Home</a></li>
+        <li><a class="nav" >Sobre</a></li>
+        <li><a class="nav">Quiz</a></li>
+    </ul>
+    <a class="btlog" href="./login.html"><i class='bx bxs-user'></i></a>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel">
+    <img src="image1.jpg" alt="Imagem 1">
+    <img src="image2.jpg" alt="Imagem 2">
+    <img src="image3.jpg" alt="Imagem 3">
+    <img src="image4.jpg" alt="Imagem 4">
+  </div>
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+  <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+    
+  </body>
+
+</html>
+<script>
+  let currentSlide = 0;
+
+function showSlide(index) {
+  const carousel = document.querySelector('.carousel');
+  const slides = document.querySelectorAll('.carousel img');
+  const totalSlides = slides.length;
+
+  // Ajusta o índice para o intervalo correto
+  if (index >= totalSlides) {
+    currentSlide = 0;
+  } else if (index < 0) {
+    currentSlide = totalSlides - 1;
+  } else {
+    currentSlide = index;
+  }
+
+  // Move o carrossel para a imagem correta
+  const offset = -currentSlide * 100;
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
+// Inicializa o carrossel
+showSlide(currentSlide);
+
+</script>
