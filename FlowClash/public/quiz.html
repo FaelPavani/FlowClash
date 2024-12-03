@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/quiz.css">
+    <script src="./js/sessao.js"></script>
+    <script src="./js/alerta.js"></script>
+</head>
+<body onload="validarSessao()">
+    
+    <header>
+        <a class="logo"><img src="assets/logodefinitiva.png" alt=""></a>
+        <ul>
+            <li><a class="nav" href="./index.html">Home</a></li>
+            <li><a class="nav" >Sobre</a></li>
+            <li><a class="nav">Quiz</a></li>
+        </ul>
+        <a class="btlog" href="./login.html"><i class='bx bxs-user'></i></a>
+    </header>
+
+
+    <span id="b_usuario" style="font-size: 100px;color: white;"></span>
+    
+
+
+
+</div>
+
+
+</body>
+</html>
+<script>
+   
+    // function quizNow() {
+
+
+    //     JSON.parse(sessionStorage.QuizAtual).forEach(item => {
+    //         document.getElementById("sla").innerHTML += `
+    //         ${item.id},  ${item.id},  ${item.id},  ${item.id},  ${item.id},  ${item.id},  ${item.id},
+            
+    
+    //         `
+
+    //     });
+    // }
+    
+    
+    function validarSessao() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+    var b_usuario = document.getElementById("b_usuario");
+
+    if (email != null && nome != null) {
+        b_usuario.innerHTML = nome;
+    } else {
+        window.location = "../login.html";
+    }
+}
+    
+    
+    
+    
+    
+    </script>
