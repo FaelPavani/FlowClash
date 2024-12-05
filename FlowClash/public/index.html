@@ -7,13 +7,188 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <title>F1</title>
-    <link rel="icon" href="./img/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="./css/header.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FlowClash | Home</title>
+  
     <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
     
-</body>
+    <header>
+        <a class="logo "><img src="img/airconomics_logo_completo.png" alt=""></a>
+        <ul>
+            <li><a class="nav" href="index.html">Home</a></li>
+            <li><a class="nav"  href="#about">Sobre</a></li>
+            <li><a class="nav"  href="#social">Batalhas</a></li>
+        </ul>
+        <a class="btlog" href="login.html"><i class='bx bxs-user'></i></a>
+    </header>
+    <section class="home">
+      <div class="carousel-container">
+        <div class="carousel">
+          <img src="image1.jpg" alt="Imagem 1" class="carousel-image active">
+          <img src="image2.jpg" alt="Imagem 2" class="carousel-image">
+        </div>
+        <div class="buttons">
+          <button class="nav-button" onclick="prevSlide()">Anterior</button>
+          <button class="nav-button" onclick="nextSlide()">Próximo</button>
+        </div>
+      </div>
+    </section>
+    <section class="Sobre">
 
-</html>
+        <div class="container">
+            <div class="box left hidden">
+              <h3>Texto Esquerda</h3>
+              <p>Este é o texto dentro da caixa da esquerda.</p>
+            </div>
+            <div class="box right hidden">
+              <h3>Texto Direita 1</h3>
+              <p>Este é o texto dentro da primeira caixa da direita.</p>
+            </div>
+            <div class="box right hidden">
+              <h3>Texto Direita 2</h3>
+              <p>Este é o texto dentro da segunda caixa da direita.</p>
+            </div>
+
+    </section>
+    <section class="region-selector">
+        <h2>Escolha uma Região</h2>
+        <div class="buttons">
+          <button class="region-btn" id="norte-btn" onclick="showRegion('norte')">Norte</button>
+          <button class="region-btn" id="leste-btn" onclick="showRegion('leste')">Leste</button>
+          <button class="region-btn" id="sul-btn" onclick="showRegion('sul')">Sul</button>
+          <button class="region-btn" id="oeste-btn" onclick="showRegion('oeste')">Oeste</button>
+        </div>
+        <div class="cards-container">
+          <div class="cards norte hidden">
+            <div class="card">
+              <h3>Batalha 1 (Norte)</h3>
+              <p>Local: Praça da Rima</p>
+            </div>
+            <div class="card">
+              <h3>Batalha 2 (Norte)</h3>
+              <p>Local: Parque do Flow</p>
+            </div>
+          </div>
+          <div class="cards leste hidden">
+            <div class="card">
+              <h3>Batalha 1 (Leste)</h3>
+              <p>Local: Praça do Ritmo</p>
+            </div>
+            <div class="card">
+              <h3>Batalha 2 (Leste)</h3>
+              <p>Local: Arena da Rima</p>
+            </div>
+          </div>
+          <div class="cards sul hidden">
+            <div class="card">
+              <h3>Batalha 1 (Sul)</h3>
+              <p>Local: Praça da Cultura</p>
+            </div>
+            <div class="card">
+              <h3>Batalha 2 (Sul)</h3>
+              <p>Local: Largo do Flow</p>
+            </div>
+          </div>
+          <div class="cards oeste hidden">
+            <div class="card">
+              <h3>Batalha 1 (Oeste)</h3>
+              <p>Local: Praça dos Versos</p>
+            </div>
+            <div class="card">
+              <h3>Batalha 2 (Oeste)</h3>
+              <p>Local: Vila da Rima</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer>
+<p>Made with ❤️  by RafaelPavani </p>
+    </footer>
+    </body>
+    </html>
+    
+
+
+
+
+
+<script>
+let currentIndex = 0;
+
+function showSlide(index) {
+  const images = document.querySelectorAll('.carousel-image');
+  images.forEach((img, i) => {
+    img.classList.remove('active');
+    if (i === index) {
+      img.classList.add('active');
+    }
+  });
+}
+
+function nextSlide() {
+  const images = document.querySelectorAll('.carousel-image');
+  currentIndex = (currentIndex + 1) % images.length;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  const images = document.querySelectorAll('.carousel-image');
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showSlide(currentIndex);
+}
+
+// Mostrar a primeira imagem ao carregar
+showSlide(currentIndex);
+
+
+// Função para detectar quando um elemento está visível
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Mostrar elementos ao rolar
+function handleScroll() {
+  const boxes = document.querySelectorAll('.box');
+  boxes.forEach(box => {
+    if (isElementInViewport(box)) {
+      box.classList.add('visible');
+    }
+  });
+}
+
+// Evento de rolagem
+window.addEventListener('scroll', handleScroll);
+
+
+function showRegion(region) {
+  // Ocultar todos os cards
+  const allCards = document.querySelectorAll('.cards');
+  allCards.forEach(cards => cards.classList.add('hidden'));
+
+  // Mostrar os cards da região selecionada
+  const selectedCards = document.querySelector(`.cards.${region}`);
+  selectedCards.classList.remove('hidden');
+
+  // Desabilitar todos os botões
+  const buttons = document.querySelectorAll('.region-btn');
+  buttons.forEach(button => button.disabled = true);
+
+  // Habilitar o botão da região selecionada
+  const selectedButton = document.getElementById(`${region}-btn`);
+  selectedButton.disabled = false;
+}
+
+
+</script>
