@@ -2,193 +2,319 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/header.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
-    <link rel="stylesheet" href="./css/index.css">
-    <title>FlowClash | Home</title>
-  
-    <link rel="stylesheet" href="./css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/header.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/index.css">
+  <title>FlowClash | Home</title>
+
+  <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
-    
-    <header>
-        <a class="logo "><img src="img/airconomics_logo_completo.png" alt=""></a>
-        <ul>
-            <li><a class="nav" href="index.html">Home</a></li>
-            <li><a class="nav"  href="#about">Sobre</a></li>
-            <li><a class="nav"  href="#social">Batalhas</a></li>
-        </ul>
-        <a class="btlog" href="login.html"><i class='bx bxs-user'></i></a>
-    </header>
-    <section class="home">
-      <div class="carousel-container">
-        <div class="carousel">
-          <img src="image1.jpg" alt="Imagem 1" class="carousel-image active">
-          <img src="image2.jpg" alt="Imagem 2" class="carousel-image">
-        </div>
-        <div class="buttons">
-          <button class="nav-button" onclick="prevSlide()">Anterior</button>
-          <button class="nav-button" onclick="nextSlide()">Próximo</button>
+
+  <header>
+    <a class="logo "><img src="img/FlowClash-04-12-2024.png" alt=""></a>
+    <ul>
+      <li><a class="nav" href="#home">Home</a></li>
+      <li><a class="nav" href="#sobre">Sobre</a></li>
+      <li><a class="nav" href="#referencias">Referências</a></li>
+      <li><a class="nav" href="#batalhas">Batalhas</a></li>
+    </ul>
+    <a class="btlog" href="login.html"><i class='bx bxs-user'></i></a>
+  </header>
+  <section class="home" id="home">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="img/IMAGEM1.jpg" alt="Imagem 1" class="carousel-image active img1">
+        <img src="img/IMAGEM2.webp" alt="Imagem 2" class="carousel-image img2">
+      </div>
+      <div class="buttons">
+        <button class="nav-button" onclick="prevSlide()">Anterior</button>
+        <button class="nav-button" onclick="nextSlide()">Próximo</button>
+      </div>
+    </div>
+  </section>
+  <section class="sobre" id="sobre">
+    <div class="cards-sobre">
+      <div class="card-sobre sobre-left">
+        <h2>
+          História das Batalhas de Rima em São Paulo </h2>
+        <p>As batalhas de rima em São Paulo são uma das expressões mais marcantes do movimento hip-hop no Brasil. Este
+          movimento, que teve origem nos Estados Unidos nos anos 1970, chegou ao país na década de 1980, encontrando
+          solo fértil nas periferias paulistanas. A cidade, já conhecida por sua diversidade cultural e pelas
+          desigualdades sociais, tornou-se o cenário ideal para a adaptação do hip-hop à realidade brasileira.
+          O hip-hop trouxe consigo os quatro elementos: o rap (rimas e música), o graffiti (arte visual), o breakdance
+          (dança) e o DJing (manipulação de sons e batidas). Porém, nas periferias de São Paulo, o rap logo despontou
+          como a principal voz do movimento, dado seu poder narrativo e sua capacidade de articular críticas sociais. As
+          batalhas de rima emergiram desse contexto como um espaço de improvisação, criatividade e resistência.</p>
+      </div>
+      <div class="card-sobre sobre-right">
+        <h2>A Explosão nos Anos 2000</h2>
+        <p>Com a chegada dos anos 2000, as batalhas começaram a se organizar de maneira mais formal. Locais como o Largo
+          São Bento, berço do hip-hop paulista, tornaram-se pontos de encontro frequentes para MCs e artistas. Foi
+          também nesse período que surgiram competições mais estruturadas, como a Batalha do Santa Cruz e a Batalha da
+          Aldeia, que até hoje são referências nacionais.
+
+          O crescimento da internet, especialmente das redes sociais e do YouTube, desempenhou um papel fundamental na
+          popularização das batalhas de rima. Performances que antes ficavam restritas ao público presente começaram a
+          alcançar milhares de pessoas online, tornando MCs como Emicida, Rashid e Projota figuras conhecidas em todo o
+          Brasil.</p>
+      </div>
+      <div class="card-sobre sobre-left">
+        <h2>A Cultura Atual</h2>
+        <p>
+          Hoje, São Paulo é considerada a capital das batalhas de rima no Brasil. Espaços como o metrô Santa Cruz, o
+          centro histórico e outros bairros periféricos abrigam batalhas semanais, que atraem MCs iniciantes e
+          consagrados. As batalhas não são apenas um palco de disputa, mas também um ambiente de troca cultural,
+          resistência e fortalecimento da comunidade.
+
+          Além disso, eventos como o Duelo Nacional de MCs e o Rinha dos MCs ampliaram ainda mais o alcance dessas
+          batalhas, tornando São Paulo o epicentro de uma cena que inspira outras capitais e interior do país.</p>
+      </div>
+      <div class="card-sobre sobre-right">
+        <h2>Mais do que Entretenimento</h2>
+        <p>
+          As batalhas de rima em São Paulo são mais do que um simples duelo de palavras. Elas carregam mensagens de
+          luta, resistência e crítica social, dando voz a jovens das periferias que encontram no rap uma forma de
+          superar adversidades e transformar sua realidade.
+
+          Essa tradição, que mistura arte, música e poesia, continua evoluindo, garantindo que as batalhas de rima
+          permaneçam como um dos movimentos culturais mais vibrantes e relevantes de São Paulo e do Brasil.</p>
+      </div>
+    </div>
+  </section>
+  <section class="referencias" id="referencias"></section>
+  <h1 class="ref">MC's Referências da cena</h1>
+  <div class="cards-container">
+    <div class="card" style="background-image: url('img/emicida.jpg');" data-text="Texto do Card 1">
+      <div class="overlay">
+        <h3>Emicida é um dos maiores nomes do rap brasileiro, com uma carreira que começou nas batalhas de freestyle de
+          São Paulo, como a Batalha da Santa Cruz. Reconhecido por suas rimas afiadas e críticas sociais, ele conquistou
+          notoriedade pela sua habilidade de improvisação e por abordar temas como desigualdade racial e política. Além
+          das batalhas, Emicida se consolidou como um artista versátil, com álbuns aclamados e colaborações importantes.
+          Ele é uma figura central no rap nacional e continua sendo um ícone do movimento hip-hop.</h3>
+      </div>
+      <div class="card-text">Emicida</div>
+    </div>
+    <div class="card" style="background-image: url('img/rashid.webp');" data-text="Texto do Card 2">
+      <div class="overlay">
+        <h3>Rashid é um MC paulista que se destacou nas batalhas de rima, como a Batalha da Aldeia e o Campeonato
+          Nacional de MCs. Suas rimas profundas e conscientes abordam temas como política e questões sociais. Rashid se
+          tornou um dos principais nomes do rap consciente no Brasil, ganhando respeito dentro e fora das batalhas. Sua
+          carreira também inclui lançamentos de álbuns que refletem seu compromisso com a crítica social e o engajamento
+          político.</h3>
+      </div>
+      <div class="card-text">Rashid</div>
+    </div>
+    <div class="card" style="background-image: url('img/jota.jpeg');" data-text="Texto do Card 3">
+      <div class="overlay">
+        <h3>KantMC é uma das grandes promessas do freestyle em São Paulo. Com rimas rápidas e impactantes, ele se
+          destacou em competições como a Batalha do Parque São Jorge e o Campeonato Nacional de MCs. Seu estilo criativo
+          e técnico o tornou um dos MCs mais habilidosos da cena paulista, sendo uma das principais figuras da nova
+          geração do rap e do freestyle.</h3>
+      </div>
+      <div class="card-text">Jotapê</div>
+    </div>
+    <div class="card" style="background-image: url('img/kant.jpeg');" data-text="Texto do Card 4">
+      <div class="overlay">
+        <h3>Jotappe é um MC respeitado na cena atual de São Paulo, conhecido por sua presença de palco e habilidade
+          técnica. Ele ganhou notoriedade na Batalha da Aldeia, onde suas rimas afiadas e sua performance marcaram a
+          cena de freestyle. Jotappe é considerado uma das maiores promessas do rap brasileiro, sendo um dos MCs mais
+          destacados da nova geração, com uma carreira em ascensão tanto nas batalhas quanto na música.</h3>
+      </div>
+      <div class="card-text">kant</div>
+    </div>
+  </div>
+  </section>
+  <section class="batalhas" id="batalhas">
+
+    <h1 class="ref-batalhas">As <b>4</b> Maiores de São Paulo</h1>
+
+    <div class="card-b">
+      <div class="info">
+        <h2 class="nb">Nome da Batalha:</h2>
+        <h3 style="color: #ffff8b;">Batalha da Norte</h3>
+        <br>
+        <h3>Dia batalha:</h3>
+        <h4>Sexta-Feira</h4>
+        <h3>Horario batalha:</h3>
+        <h4>20:00 - 22:30</h4>
+      </div>
+      <div class="redes">
+        <h2>Redes Sociais</h2>
+        <div class="div-soc">
+          <a class="social"
+            href="https://www.instagram.com/batalhadanortesp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+              class='bx bxl-instagram'></i>Instagram</a>
+          <a class="social" href="https://www.tiktok.com/@batalhadanorte"><i class='bx bxl-tiktok'></i>TikTok</a>
+          <a class="social" href="https://www.youtube.com/@BatalhadaNorte"><i class='bx bxl-youtube'>Youtube</i></a>
         </div>
       </div>
-    </section>
-    <section class="Sobre">
+      <div class="map">
 
-        <div class="container">
-            <div class="box left hidden">
-              <h3>Texto Esquerda</h3>
-              <p>Este é o texto dentro da caixa da esquerda.</p>
-            </div>
-            <div class="box right hidden">
-              <h3>Texto Direita 1</h3>
-              <p>Este é o texto dentro da primeira caixa da direita.</p>
-            </div>
-            <div class="box right hidden">
-              <h3>Texto Direita 2</h3>
-              <p>Este é o texto dentro da segunda caixa da direita.</p>
-            </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1450.7038611884898!2d-46.6252677729203!3d-23.499458802439413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7003c458679%3A0x4fd007f73fe70bd9!2sBatalha%20da%20Norte!5e1!3m2!1sen!2sbr!4v1733458602171!5m2!1sen!2sbr"
+          style="width: 100%;height:100%;border:0;margin-top: 5%;;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      </div>
 
-    </section>
-    <section class="region-selector">
-        <h2>Escolha uma Região</h2>
-        <div class="buttons">
-          <button class="region-btn" id="norte-btn" onclick="showRegion('norte')">Norte</button>
-          <button class="region-btn" id="leste-btn" onclick="showRegion('leste')">Leste</button>
-          <button class="region-btn" id="sul-btn" onclick="showRegion('sul')">Sul</button>
-          <button class="region-btn" id="oeste-btn" onclick="showRegion('oeste')">Oeste</button>
+      <div class="card-b">
+        <div class="info">
+          <h2 class="nb">Nome da Batalha:</h2>
+          <h3 style="color: #ffff8b;">Batalha do Ana Rosa</h3>
+          <br>
+          <h3>Dia batalha:</h3>
+          <h4>Quinta-Feira</h4>
+          <h3>Horario batalha:</h3>
+          <h4>20:00 - 22:30</h4>
         </div>
-        <div class="cards-container">
-          <div class="cards norte hidden">
-            <div class="card">
-              <h3>Batalha 1 (Norte)</h3>
-              <p>Local: Praça da Rima</p>
-            </div>
-            <div class="card">
-              <h3>Batalha 2 (Norte)</h3>
-              <p>Local: Parque do Flow</p>
-            </div>
-          </div>
-          <div class="cards leste hidden">
-            <div class="card">
-              <h3>Batalha 1 (Leste)</h3>
-              <p>Local: Praça do Ritmo</p>
-            </div>
-            <div class="card">
-              <h3>Batalha 2 (Leste)</h3>
-              <p>Local: Arena da Rima</p>
-            </div>
-          </div>
-          <div class="cards sul hidden">
-            <div class="card">
-              <h3>Batalha 1 (Sul)</h3>
-              <p>Local: Praça da Cultura</p>
-            </div>
-            <div class="card">
-              <h3>Batalha 2 (Sul)</h3>
-              <p>Local: Largo do Flow</p>
-            </div>
-          </div>
-          <div class="cards oeste hidden">
-            <div class="card">
-              <h3>Batalha 1 (Oeste)</h3>
-              <p>Local: Praça dos Versos</p>
-            </div>
-            <div class="card">
-              <h3>Batalha 2 (Oeste)</h3>
-              <p>Local: Vila da Rima</p>
-            </div>
+        <div class="redes">
+          <h2>Redes Sociais</h2>
+          <div class="div-soc">
+            <a class="social"
+              href="https://www.instagram.com/batalhadoanarosa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class='bx bxl-instagram'></i>Instagram</a>
+            <a class="social" href="https://www.tiktok.com/@batalhadoanarosa"><i class='bx bxl-tiktok'></i>TikTok</a>
+            <a class="social" href="https://www.youtube.com/@BatalhadoAnaRosa"><i class='bx   bxl-youtube'>Youtube</i></a>
           </div>
         </div>
-      </section>
+        <div class="map">
 
-    <footer>
-<p>Made with ❤️  by RafaelPavani </p>
-    </footer>
-    </body>
-    </html>
-    
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d48144.170369877924!2d-46.67218831658464!3d-23.581344090644468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94ce59d975374c33%3A0x76b47140454bc01!2sBatalha%20do%20Ana%20Rosa%20-%20BDAR%2C%20Rua%20Vergueiro%2C%202188%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004009-000!3m2!1d-23.581243!2d-46.6388257!5e1!3m2!1sen!2sbr!4v1733461954522!5m2!1sen!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+        <div class="card-b">
+          <div class="info">
+            <h2 class="nb">Nome da Batalha:</h2>
+            <h3 style="color: #ffff8b;">Batalha da Aldeia</h3>
+            <br>
+            <h3>Dia batalha:</h3>
+            <h4>Segunda-Feira</h4>
+            <h3>Horario batalha:</h3>
+            <h4>19:30 - 22:30</h4>
+          </div>
+          <div class="redes">
+            <h2>Redes Sociais</h2>
+            <div class="div-soc">
+              <a class="social"
+                href="https://www.instagram.com/batalhadaaldeia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                  class='bx bxl-instagram'></i>Instagram</a>
+              <a class="social" href="https://www.tiktok.com/@batalhadaaldeiabda"><i class='bx bxl-tiktok'></i>TikTok</a>
+              <a class="social" href="https://www.youtube.com/@BatalhaDaAldeia"><i class='bx bxl-youtube'>Youtube</i></a>
+            </div>
+          </div>
+          <div class="map">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d57700.13029847595!2d-46.90719848900315!3d-23.508722750513847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94cf035e773ae209%3A0xd00eab40713334dd!2sBatalha%20da%20Aldeia%2C%20Av.%20Guilherme%20Perereca%20Guglielmo%20-%20Centro%2C%20Barueri%20-%20SP%2C%2006401-145!3m2!1d-23.5088069!2d-46.8659129!5e1!3m2!1sen!2sbr!4v1733462118643!5m2!1sen!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+          <div class="card-b">
+            <div class="info">
+              <h2 class="nb">Nome da Batalha:</h2>
+              <h3 style="color: #ffff8b;">Batalha da Leste</h3>
+              <br>
+              <h3>Dia batalha:</h3>
+              <h4>Sexta-Feira</h4>
+              <h3>Horario batalha:</h3>
+              <h4>15:30 - 19:30</h4>
+            </div>
+            <div class="redes">
+              <h2>Redes Sociais</h2>
+              <div class="div-soc">
+                <a class="social"
+                  href="https://www.instagram.com/batalhadaleste?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                    class='bx bxl-instagram'></i>Instagram</a>
+                <a class="social" href="https://www.tiktok.com/@batalhadaleste"><i class='bx bxl-tiktok'></i>TikTok</a>
+                <a class="social" href="https://www.youtube.com/@batalhadalestesp"><i
+                    class='bx bxl-youtube'>Youtube</i></a>
+              </div>
+            </div>
+            <div class="map">
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23089.20265879765!2d-46.49572851397938!3d-23.543453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce673c04f5bb41%3A0x9eae049f9f48ce32!2sBatalha%20da%20Leste!5e1!3m2!1sen!2sbr!4v1733462348449!5m2!1sen!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+  </section>
+
+
+  <footer>
+    <p>Made with ❤️ by Rafael Pavani </p>
+  </footer>
+</body>
+
+</html>
+
 
 
 
 
 
 <script>
-let currentIndex = 0;
+  let currentIndex = 0;
 
-function showSlide(index) {
-  const images = document.querySelectorAll('.carousel-image');
-  images.forEach((img, i) => {
-    img.classList.remove('active');
-    if (i === index) {
-      img.classList.add('active');
-    }
-  });
-}
+  function showSlide(index) {
+    const images = document.querySelectorAll('.carousel-image');
+    images.forEach((img, i) => {
+      img.classList.remove('active');
+      if (i === index) {
+        img.classList.add('active');
+      }
+    });
+  }
 
-function nextSlide() {
-  const images = document.querySelectorAll('.carousel-image');
-  currentIndex = (currentIndex + 1) % images.length;
+  function nextSlide() {
+    const images = document.querySelectorAll('.carousel-image');
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    const images = document.querySelectorAll('.carousel-image');
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(currentIndex);
+  }
+
+  // Mostrar a primeira imagem ao carregar
   showSlide(currentIndex);
-}
-
-function prevSlide() {
-  const images = document.querySelectorAll('.carousel-image');
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showSlide(currentIndex);
-}
-
-// Mostrar a primeira imagem ao carregar
-showSlide(currentIndex);
 
 
-// Função para detectar quando um elemento está visível
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
+  // Função para detectar quando um elemento está visível
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
 
-// Mostrar elementos ao rolar
-function handleScroll() {
-  const boxes = document.querySelectorAll('.box');
-  boxes.forEach(box => {
-    if (isElementInViewport(box)) {
-      box.classList.add('visible');
-    }
+    // Adiciona o desfoque aos cards não ativos
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        cards.forEach(otherCard => {
+          if (otherCard !== card) {
+            otherCard.classList.add("blurred");
+          }
+        });
+      });
+
+      // Remove o desfoque quando o mouse sai do card
+      card.addEventListener("mouseleave", () => {
+        cards.forEach(otherCard => {
+          otherCard.classList.remove("blurred");
+        });
+      });
+    });
   });
-}
-
-// Evento de rolagem
-window.addEventListener('scroll', handleScroll);
-
-
-function showRegion(region) {
-  // Ocultar todos os cards
-  const allCards = document.querySelectorAll('.cards');
-  allCards.forEach(cards => cards.classList.add('hidden'));
-
-  // Mostrar os cards da região selecionada
-  const selectedCards = document.querySelector(`.cards.${region}`);
-  selectedCards.classList.remove('hidden');
-
-  // Desabilitar todos os botões
-  const buttons = document.querySelectorAll('.region-btn');
-  buttons.forEach(button => button.disabled = true);
-
-  // Habilitar o botão da região selecionada
-  const selectedButton = document.getElementById(`${region}-btn`);
-  selectedButton.disabled = false;
-}
-
+  setInterval(nextSlide(), 3000);
 
 </script>

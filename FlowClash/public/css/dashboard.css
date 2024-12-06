@@ -1,44 +1,57 @@
-:root {
-    --main-color: #d3ad7f;
-    --black: #13131a;
-    --bg: #1a2b3c;
-    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
-    --redF1: #e10600;
-}
+
 
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 
+body {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #2a2a2a);
+    animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
+    background-size: 200% 200%;
+    /* Permite o deslocamento da animação */
+    animation: backgroundAnimation 8s ease-in-out infinite;
+    /* Animação lenta e suave */
+    font-family: Arial, sans-serif;
+    /* Garante que o fundo cubra toda a altura da janela */
+
+}
+
+.geral{
+    margin-top: 4.8vw;
+display: flex;
+flex-direction: row;
 
 
-
+}
 .indicadores{
-    width: 100%;
+    width: 20%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    
     justify-content: space-around;
     height: fit-content;
 }
 
 .indicadores .indicador{
-    height: 120px;
-    width: 240px;
+    height: 16vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
-    border: 1px solid gold;
+    text-align: center;
     transition: .5s all ease;
+    background: rgba(58, 71, 80  , 0.7); /* Fundo translúcido */
+backdrop-filter: blur(10px); /* Efeito de desfoque */
+-webkit-backdrop-filter: blur(10px); /* Compatibilidade com navegadores WebKit */
+box-shadow: 0 0 0.5vh var(--logo-color);
+margin-bottom: 2vh;
 }
 
-.indicadores .indicador:hover{
-    scale: 1.1;
-}
 
 .indicadores .indicador h3{
     background-color: var(--main-color);
@@ -46,10 +59,22 @@
     width: 100%;
     align-items: center;
     height: 50%;
-    border-radius: 5px 5px 0px 0px;
+    font-size: 2vw;
 }
 
 .indicadores .indicador span{
-    font-size: 1.2rem;
+    font-size: 2vw;
     height: 50%;
+    color: #ffff8b;
 }
+section{
+width: 80%;
+
+}
+
+.charts{
+width: 52%;
+margin-left: 24%;
+height: 9   0vh;
+}
+

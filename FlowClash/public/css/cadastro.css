@@ -7,11 +7,14 @@
 }
 
 body {
-    background-image: url(../img/bgCadastroCHECK.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #2a2a2a);
+    animation: backgroundAnimation 10Ws ease-in-out infinite alternate;
+    background-size: 200% 200%;
+    /* Permite o deslocamento da animação */
+    animation: backgroundAnimation 8s ease-in-out infinite;
+    /* Animação lenta e suave */
+    font-family: Arial, sans-serif;
+    /* Garante que o fundo cubra toda a altura da janela */
 }
 
 .container {
@@ -22,18 +25,21 @@ body {
 }
 
 .card {
-    background-color: #ffffff80;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0px 6px rgba(255, 255, 139, 1);
+    backdrop-filter: blur(50px);
     padding: 30px;
-   backdrop-filter: blur(10px);
     border-radius: 4%;
-    box-shadow: 3px 3px 1px 0px #00000060;
+   
     width: 400px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #272262;
+    color: white;
 }
 
 .label-float input {
@@ -41,7 +47,7 @@ h1 {
     padding: 5px 5px;
     display: inline-block;
     border: 0;
-    border-bottom: 2px solid #0d009c;
+    border-bottom: 2px solid #ffff8b;
     background-color: transparent;
     outline: none;
     min-width: 180px;
@@ -58,11 +64,11 @@ h1 {
 }
 
 .label-float input:focus {
-    border-bottom: 2px solid #4038a0;
+    border-bottom: 2px solid white;
 }
 
 .label-float label {
-    color: #0d009c;
+    color: white;
     pointer-events: none;
     position: absolute;
     top: 0;
@@ -75,13 +81,13 @@ h1 {
 .label-float input:valid+label {
     font-size: 13px;
     margin-top: 0;
-    color: #4038a0;
+    color: #ffff8b;
 }
 
 button {
     background-color: transparent;
-    border-color: #272262;
-    color: #272262;
+    border-color: white;
+    color: white;
     padding: 7px;
     font-weight: bold;
     font-size: 12pt;
@@ -93,8 +99,8 @@ button {
 }
 
 button:hover {
-    background-color: #0d009c;
-    color: #fff;
+    background-color: #ffff8b;
+    color: #ddd;
 }
 
 .justify-center {
@@ -102,13 +108,7 @@ button:hover {
     justify-content: center;
 }
 
-.fa-eye {
-    position: absolute;
-    top: 18px;
-    right: 10px;
-    cursor: pointer;
-    color: #0d009c;
-}
+
 
 #cadError {
     text-align: center;

@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/dash.css">
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="shortcut icon" href="../assets/images/cavallino.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
 </head>
 
 <body>
-    <header id="header">
-        <nav class="nav"><!-------Inicio da navbar------->
+    <header>
+        <a class="logo "><img src="img/FlowClash-04-12-2024.png" alt=""></a>
+        <ul>
+          <li><a class="nav" href="index.html#home">Home</a></li>
+          <li><a class="nav" href="index.html#sobre">Sobre</a></li>
+          <li><a class="nav" href="index.html#referencias">Referências</a></li>
+          <li><a class="nav" href="index.html#batalhas">Batalhas</a></li>
+          <li><a class="return" href="quiz.html">Tentar Novamente</a></li>
+        </ul>
+       
+      </header>
 
-            <ul class="nav-login">
-                <li class="menu-item"><a href="./index.html">Home</a></li>
-                <li class="menu-item"><a href="./acompanhe.html">Acompanhe F1</a></li>
-            </ul>
-        </nav><!-------Fim da navbar------->
-    </header>
-
-
+<div class="geral">
     <div class="indicadores">
         <div class="indicador">
             <h3>Total de Tentativas</h3>
@@ -47,30 +50,21 @@
     </div>
     <section id="pilot-carrer">
         <div class="container">
-            <div class="pilot">
-
-
-                <div class="stats">
-
-
-                    <div class="charts">
+           
+                  <div class="charts">
                         <canvas id="chartPoints"></canvas>
                     </div>
-                </div>
-            </div>
-        </div>
+        
         </div>
     </section>
-    <!-- -------------------------------------------------------------------------------------------------- -->
+   
+</div>
+<footer>
+    <p>Made with ❤️ by Rafael Pavani </p>
+  </footer>
 
 
-    <footer id="footer"> <!-- Inicio do footer -->
-        <span class="footer-text">&copy; Desenvolvido com &hearts; por Lucas Rodrigues</span>
-        <a href="https://github.com/LucasRodriguesCartaxo" target="_blank" class="github-logo"><img
-                src="./img/logo githun.png"></a>
-    </footer> <!-- Fim do footer -->
-
-    <!-- -------------------------------------------------------------------------------------------------- -->
+   
 </body>
 
 </html>
@@ -104,11 +98,11 @@
                     new Chart(chartPoints, {
                         type: 'pie',
                         data: {
-                            labels: ['Errado', 'Certo'],
+                            labels: ['Incorrettas', 'Corretas'],
                             datasets: [{
                                 label: 'Pontos',
                                 data: [erradas, corretas],
-                                backgroundColor: ['#ff0000', '#008000'],
+                                backgroundColor: ['#FF6F61', '#6ECB63'],
                                 barThickness: 30,
                                 borderWidth: 2
                             },
@@ -117,32 +111,32 @@
                         options: {
                             scales: {
                                 y: {
-                                    beginAtZero: true,
+                                    beginAtZero: false,
                                     ticks: {
-                                        color: '#CCC'
+                                     
                                     },
                                     grid: {
-                                        color: '#CCC'
+                                      
                                     }
                                 },
                                 x: {
                                     ticks: {
-                                        color: '#CCC'
+                                       
                                     }
                                 }
                             },
                             plugins: {
                                 legend: {
                                     labels: {
-                                        color: '#CCC'
+                                     
                                     }
                                 },
                                 title: {
                                     display: true,
-                                    text: 'Pontos por Temporada na Fórmula 1',
+                                    text: 'Percentual de acertos no Quiz',
                                     color: '#fff',
                                     font: {
-                                        size: 15
+                                        size: 25
                                     }
                                 }
                             },

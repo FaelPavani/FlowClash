@@ -1,90 +1,89 @@
-// Seleção de elementos HTML para manipulação posterior
-const $startGameButton = document.querySelector(".start-quiz"); // Botão de início do jogo
-const $questionsContainer = document.querySelector(".question-container"); // Contêiner das perguntas
-const $answersContainer = document.querySelector(".answers-conteiner"); // Contêiner das respostas
-const $questionText = document.querySelector(".question"); // Texto da pergunta
-const $nextQuestionButton = document.querySelector(".next-question"); // Botão para próxima pergunta
 
-// Adiciona eventos de clique aos botões
-$startGameButton.addEventListener("click", startGame); // Quando clicado, inicia o jogo
-$nextQuestionButton.addEventListener("click", displayNextQuestion); // Mostra a próxima pergunta
+const $startGameButton = document.querySelector(".start-quiz"); 
+const $questionsContainer = document.querySelector(".question-container");
+const $answersContainer = document.querySelector(".answers-conteiner"); 
+const $questionText = document.querySelector(".question"); 
+const $nextQuestionButton = document.querySelector(".next-question"); 
 
-// Variáveis para rastrear o progresso no quiz
-let currentQuestionIndex = 0; // Índice da pergunta atual
-let totalCorrect = 0; // Total de respostas corretas do jogador
+$startGameButton.addEventListener("click", startGame); 
+$nextQuestionButton.addEventListener("click", displayNextQuestion); 
 
-// Função que inicia o jogo
+
+let currentQuestionIndex = 0; 
+let totalCorrect = 0; 
+
+
 function startGame() {
-    $startGameButton.classList.add("hide"); // Esconde o botão de iniciar adicionando a classe 'hide'
-    $questionsContainer.classList.remove("hide"); // Mostra o contêiner das perguntas removendo a classe 'hide'
-    displayNextQuestion(); // Mostra a primeira pergunta
+    $startGameButton.classList.add("hide"); 
+    $questionsContainer.classList.remove("hide"); 
+    displayNextQuestion(); 
 }
 
-// Função que exibe a próxima pergunta
-function displayNextQuestion() {
-    resetState(); // Reseta o estado anterior das respostas
 
-    // Verifica se todas as perguntas foram respondidas
+function displayNextQuestion() {
+    resetState(); 
+
+   
     if (question.length === currentQuestionIndex) {
-        return finishGame(); // Finaliza o jogo se todas as perguntas foram respondidas
+        return finishGame(); 
     }
 
-    // Atualiza o texto da pergunta atual
+ 
     $questionText.textContent = question[currentQuestionIndex].question;
 
-    // Adiciona as opções de resposta
+    
     question[currentQuestionIndex].answers.forEach(answer => {
-        const newAnswer = document.createElement("button"); // Cria um botão para a resposta
-        newAnswer.classList.add("button", "answer"); // Adiciona classes ao botão
-        newAnswer.textContent = answer.text; // Define o texto do botão como a resposta
+        const newAnswer = document.createElement("button"); 
+        newAnswer.classList.add("button", "answer"); 
+        newAnswer.textContent = answer.text; 
 
         if (answer.correct) {
-            newAnswer.dataset.correct = answer.correct; // Marca a resposta correta com um atributo
+            newAnswer.dataset.correct = answer.correct;
         }
-        $answersContainer.appendChild(newAnswer); // Adiciona o botão ao contêiner de respostas
+        $answersContainer.appendChild(newAnswer); 
 
-        // Adiciona evento de clique para selecionar a resposta
+       
         newAnswer.addEventListener("click", selectAnswer);
     });
 }
 
-// Função para resetar o estado anterior (limpar respostas e ocultar botão)
+
 function resetState() {
     while ($answersContainer.firstChild) {
-        $answersContainer.removeChild($answersContainer.firstChild); // Remove todas as respostas anteriores
+        $answersContainer.removeChild($answersContainer.firstChild); 
     }
-    $nextQuestionButton.classList.add("hide"); // Esconde o botão de próxima pergunta
+    $nextQuestionButton.classList.add("hide"); 
 }
 
-// Função chamada quando uma resposta é selecionada
-function selectAnswer(event) {
-    const answerClicked = event.target; // Obtém o botão clicado
 
-    // Marca todas as respostas como corretas ou incorretas
+function selectAnswer(event) {
+    const answerClicked = event.target; 
+
+    
     document.querySelectorAll(".answer").forEach(button => {
         if (button.dataset.correct) {
-            button.classList.add("correct"); // Adiciona classe 'correct' para respostas corretas
+            button.classList.add("correct");
         } else {
-            button.classList.add("incorrect"); // Adiciona classe 'incorrect' para respostas erradas
+            button.classList.add("incorrect"); 
         }
-        button.disabled = true; // Desabilita todos os botões após a escolha
+        button.disabled = true; 
     });
 
-    // Incrementa o total de acertos se a resposta clicada for correta
+    
     if (answerClicked.dataset.correct === "true") {
         totalCorrect++;
     }
 
-    $nextQuestionButton.classList.remove("hide"); // Mostra o botão de próxima pergunta
-    currentQuestionIndex++; // Passa para a próxima pergunta
+    $nextQuestionButton.classList.remove("hide"); 
+    currentQuestionIndex++; 
 }
 
-// Função que finaliza o jogo
-function finishGame() {
-    const totalQuestions = question.length; // Total de perguntas no quiz
-    let qtd_corretas = totalCorrect; // Quantidade de respostas corretas
 
-    // Envia os dados do resultado para o servidor
+function finishGame() {
+    const totalQuestions = question.length; 
+    let qtd_corretas = totalCorrect; 
+
+   
     fetch("/quiz/inserir", {
         method: "POST",
         headers: {
@@ -122,85 +121,195 @@ function finishGame() {
 
 
     let message = '';
-    message = `<span class = 'nomeDoUsuario'>Parabéns por completar o quiz ${sessionStorage.getItem('NOME_USUARIO')}</span> <br>
-                <a href='./dashboar.html'><span class='textdash'>Ver a sua dashboard</span> </a>`
+    message = `<span class = 'nomeDoUsuario'>Parabéns por completar o quiz ${sessionStorage.getItem('NOME_USUARIO')}!!</span> <br>
+                `
     $questionsContainer.innerHTML = message
-
+    setTimeout(function() {
+        window.location.href = 'dashboar.html';
+      }, 2000); 
 }
 
 
 
 const question = [
     {
-        question: "Em que ano Max Verstappen estreou na Fórmula 1?",
+        question: "Qual é o nome da batalha de rima mais famosa de São Paulo?",
         answers: [
-            { text: "2012", correct: false },
-            { text: "2015", correct: true },
-            { text: "2017", correct: false },
-            { text: "2019", correct: false }
+            { text: "Batalha do Real", correct: false },
+            { text: "Batalha da Aldeia", correct: true },
+            { text: "Batalha do Museu", correct: false },
+            { text: "Batalha da Matriz", correct: false }
         ]
     },
     {
-        question: "Quem é o maior vencedor de GP da Fórmula 1?",
+        question: "Qual elemento do hip-hop é essencial em batalhas de rima?",
         answers: [
-            { text: "Michael schumacher", correct: false },
-            { text: "Alain Prost", correct: false },
-            { text: "Ayrton senna", correct: false },
-            { text: "Lewis hamilton", correct: true }
+            { text: "Breaking", correct: false },
+            { text: "DJing", correct: false },
+            { text: "MCing", correct: true },
+            { text: "Graffiti", correct: false }
         ]
     },
     {
-        question: "Qual equipe corre com os carros vermelhos?",
+        question: "Qual é o formato mais comum das batalhas de rima?",
         answers: [
-            { text: "Alpine", correct: false },
-            { text: "Mc Laren", correct: false },
-            { text: "Ferrari", correct: true },
-            { text: "Red bull", correct: false }
+            { text: "Roda de free dance", correct: false },
+            { text: "Disputa 1v1", correct: true },
+            { text: "Coral de improviso", correct: false },
+            { text: "Rima em grupo", correct: false }
         ]
     },
     {
-        question: "Quem é o piloto com mais vitoria em uma única temporada?",
+        question: "O que significa o termo 'punchline' em uma batalha de rima?",
         answers: [
-            { text: "Lewis Hamilton", correct: false },
-            { text: "Michael Schumacher", correct: false },
-            { text: "Ayrton Senna", correct: false },
-            { text: "Max Verstappen", correct: true }
+            { text: "A rima que finaliza uma batalha", correct: false },
+            { text: "Uma rima com impacto forte", correct: true },
+            { text: "Um erro de improviso", correct: false },
+            { text: "O início do beat", correct: false }
         ]
     },
     {
-        question: "Qual equipe é a maior vencedora do campeonato de construtores?",
+        question: "Qual plataforma digital ajudou a popularizar as batalhas de rima no Brasil?",
         answers: [
-            { text: "Ferrari", correct: true },
-            { text: "Mercedes", correct: false },
-            { text: "Red Bull", correct: false },
-            { text: "Williams", correct: false }
+            { text: "Twitch", correct: false },
+            { text: "YouTube", correct: true },
+            { text: "Spotify", correct: false },
+            { text: "TikTok", correct: false }
         ]
     },
     {
-        question: "Quem é o atual campeão mundial de Fórmula 1?",
+        question: "Qual MC ficou famoso por suas participações na Batalha da Aldeia?",
         answers: [
-            { text: "Charles Leclerc", correct: false },
-            { text: "Max Verstappen", correct: true },
-            { text: "Lewis Hamilton", correct: false },
-            { text: "Fernando Alonso", correct: false }
+            { text: "Mano Brown", correct: false },
+            { text: "Kant", correct: true },
+            { text: "Rashid", correct: false },
+            { text: "Rincon Sapiência", correct: false }
         ]
     },
     {
-        question: "A McLaren é uma equipe?",
+        question: "Qual é a principal característica das batalhas de rima freestyle?",
         answers: [
-            { text: "Inglesa", correct: true },
-            { text: "Austríaca", correct: false },
-            { text: "Brasileira", correct: false },
-            { text: "Argentina", correct: false }
+            { text: "Coreografias sincronizadas", correct: false },
+            { text: "Improviso", correct: true },
+            { text: "Rimas previamente escritas", correct: false },
+            { text: "Instrumentos ao vivo", correct: false }
         ]
     },
     {
-        question: "Qual foi a ultima equipe que o Ayrton Senna correu?",
+        question: "Qual evento anual reúne MCs de diferentes batalhas para uma competição nacional?",
         answers: [
-            { text: "Mc Laren", correct: false },
-            { text: "Ferrari", correct: false },
-            { text: "Williams", correct: true },
-            { text: "Lotus", correct: false }
+            { text: "Festival Hip-Hop SP", correct: false },
+            { text: "Duelo Nacional de MCs", correct: true },
+            { text: "Encontro de Aldeias", correct: false },
+            { text: "RapFest", correct: false }
         ]
     },
-]
+    {
+        question: "O que é o 'beat' em uma batalha de rima?",
+        answers: [
+            { text: "A base musical usada na disputa", correct: true },
+            { text: "O intervalo entre rounds", correct: false },
+            { text: "O jurado principal", correct: false },
+            { text: "O MC que inicia a batalha", correct: false }
+        ]
+    },
+    {
+        question: "Quem geralmente avalia os MCs em batalhas de rima?",
+        answers: [
+            { text: "DJs", correct: false },
+            { text: "Jurados", correct: true },
+            { text: "Produtores", correct: false },
+            { text: "Rappers famosos", correct: false }
+        ]
+    },
+    {
+        question: "Qual técnica de improviso é usada para responder ao adversário diretamente?",
+        answers: [
+            { text: "Crossfit", correct: false },
+            { text: "Rebuttal", correct: true },
+            { text: "Flow invertido", correct: false },
+            { text: "Freesync", correct: false }
+        ]
+    },
+    {
+        question: "Como um MC pode ser eliminado em uma batalha?",
+        answers: [
+            { text: "Perder o ritmo", correct: false },
+            { text: "Receber menos votos", correct: true },
+            { text: "Errar o tema", correct: false },
+            { text: "Improvisar frases longas", correct: false }
+        ]
+    },
+    {
+        question: "Qual rapper nacional é conhecido por apoiar batalhas de rima?",
+        answers: [
+            { text: "Emicida", correct: true },
+            { text: "Criolo", correct: false },
+            { text: "Sabotage", correct: false },
+            { text: "Djonga", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o objetivo principal de uma batalha de rima?",
+        answers: [
+            { text: "Entreter o público", correct: false },
+            { text: "Superar o adversário com criatividade", correct: true },
+            { text: "Mostrar conhecimento teórico", correct: false },
+            { text: "Ganhar prêmios em dinheiro", correct: false }
+        ]
+    },
+    {
+        question: "Qual cidade tem uma das cenas de batalhas de rima mais ativas do Brasil?",
+        answers: [
+            { text: "Recife", correct: false },
+            { text: "São Paulo", correct: true },
+            { text: "Manaus", correct: false },
+            { text: "Curitiba", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o significado de 'flow' nas batalhas de rima?",
+        answers: [
+            { text: "Volume da voz", correct: false },
+            { text: "Forma como o MC entrega a rima", correct: true },
+            { text: "Tempo de improvisação", correct: false },
+            { text: "Ritmo do beat", correct: false }
+        ]
+    },
+    {
+        question: "Qual MC é famoso pelo uso de humor em suas batalhas?",
+        answers: [
+            { text: "Orochi", correct: false },
+            { text: "Spinardi", correct: false },
+            { text: "Sant", correct: true },
+            { text: "Baco Exu do Blues", correct: false }
+        ]
+    },
+    {
+        question: "Qual termo é usado quando um MC rima algo muito criativo e impressiona o público?",
+        answers: [
+            { text: "Drop", correct: false },
+            { text: "Hit", correct: false },
+            { text: "Punch", correct: true },
+            { text: "Freestyle", correct: false }
+        ]
+    },
+    {
+        question: "Qual é a regra básica das batalhas de rima?",
+        answers: [
+            { text: "Não usar palavras difíceis", correct: false },
+            { text: "Improvisar sobre o tema dado", correct: true },
+            { text: "Evitar atacar o adversário", correct: false },
+            { text: "Sempre rimar frases longas", correct: false }
+        ]
+    },
+    {
+        question: "Qual rapper internacional é uma grande influência nas batalhas de rima no Brasil?",
+        answers: [
+            { text: "Jay-Z", correct: false },
+            { text: "Tupac", correct: false },
+            { text: "Eminem", correct: true },
+            { text: "Nas", correct: false }
+        ]
+    }
+];
