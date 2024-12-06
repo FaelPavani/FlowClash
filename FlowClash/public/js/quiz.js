@@ -125,7 +125,7 @@ function finishGame() {
                 `
     $questionsContainer.innerHTML = message
     setTimeout(function() {
-        window.location.href = 'dashboar.html';
+        window.location.href = 'dashboard.html';
       }, 2000); 
 }
 
