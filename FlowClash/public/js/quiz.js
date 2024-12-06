@@ -169,7 +169,7 @@ const question = [
         ]
     },
     {
-        question: "Qual plataforma digital ajudou a popularizar as batalhas de rima no Brasil?",
+        question: "Qual plataforma digital ajudou a popularizar as batalhas de rima?",
         answers: [
             { text: "Twitch", correct: false },
             { text: "YouTube", correct: true },
@@ -196,7 +196,7 @@ const question = [
         ]
     },
     {
-        question: "Qual evento anual reúne MCs de diferentes batalhas para uma competição nacional?",
+        question: "Qual evento anual reúne MCs para uma competição nacional?",
         answers: [
             { text: "Festival Hip-Hop SP", correct: false },
             { text: "Duelo Nacional de MCs", correct: true },
@@ -223,7 +223,7 @@ const question = [
         ]
     },
     {
-        question: "Qual técnica de improviso é usada para responder ao adversário diretamente?",
+        question: "Qual técnica de improviso é usada para responder o adversário diretamente?",
         answers: [
             { text: "Crossfit", correct: false },
             { text: "Rebuttal", correct: true },
@@ -304,7 +304,7 @@ const question = [
         ]
     },
     {
-        question: "Qual rapper internacional é uma grande influência nas batalhas de rima no Brasil?",
+        question: "Qual rapper internacional é uma grande influência nas batalhas no Brasil?",
         answers: [
             { text: "Jay-Z", correct: false },
             { text: "Tupac", correct: false },

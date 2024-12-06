@@ -23,7 +23,7 @@ body {
     background-color: #000000c4;
     color: white;
     height: 70%;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     border: 2px solid #ffc219;
     box-shadow: 1px 1px 15px rgba(255, 255, 139, 1);
@@ -48,7 +48,7 @@ body {
 }
 
 .question{
-    font-size: 1.6vw;
+    font-size: 1.2vw;
     font-weight: bold;
     text-align: center;
     color: #ffff8b;
